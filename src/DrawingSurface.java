@@ -41,6 +41,7 @@ public class DrawingSurface extends PApplet {
 		}
 		player1.draw(this);
 		player2.draw(this);
+		p.draw(this);
 	}
 	
 	public void keyPressed() {
