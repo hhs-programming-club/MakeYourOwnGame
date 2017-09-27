@@ -7,12 +7,12 @@ public class DrawingSurface extends PApplet {
 	private ArrayList<Integer> keys;
 	private Player player1;
 	private Player player2;
-	
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();
 		player1 = new Player(250, 400, 50, 50);
 		player2 = new Player(250,50,50,50);
+		
 	}
 
 	public void draw() {
@@ -40,6 +40,7 @@ public class DrawingSurface extends PApplet {
 		}
 		player1.draw(this);
 		player2.draw(this);
+
 	}
 	
 	public void keyPressed() {
