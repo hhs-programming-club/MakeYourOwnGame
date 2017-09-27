@@ -5,27 +5,40 @@ import processing.event.MouseEvent;
 
 public class DrawingSurface extends PApplet {
 	private ArrayList<Integer> keys;
-	private Player person;
-	private Platform p;
+	private Player player1;
+	private Player player2;
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();
-		person = new Player(250, 200, 50, 50);
-		p = new Platform(150, 250, 200, 20);
+		player1 = new Player(250, 400, 50, 50);
+		player2 = new Player(250,50,50,50);
 	}
 
 	public void draw() {
 		clear();
 		background(255);
 		if (checkKey(RIGHT)) {
-			System.out.println("Move Player Right");
+			System.out.println("Move Player1 Right");
 		} if (checkKey(LEFT)) {
-			System.out.println("Move Player Left");
+			System.out.println("Move Player1 Left");
 		} if (checkKey(UP)) {
-			System.out.println("Make Player Jump");
+			System.out.println("Move Player1 Up");
+		} if (checkKey(DOWN)) {
+			System.out.println("Move Player1 Down");
 		}
-		person.draw(this);
-		p.draw(this);
+		
+		if (checkKey(87)) { //W key
+			System.out.println("Move Player1 Up");
+		} 
+		if (checkKey(65)) { //A
+			System.out.println("Move Player1 Left");
+		} if (checkKey(83)) { //S
+			System.out.println("Move Player1 Down");
+		} if (checkKey(68)) { //D
+			System.out.println("Move Player1 Right");
+		}
+		player1.draw(this);
+		player2.draw(this);
 	}
 	
 	public void keyPressed() {

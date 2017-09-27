@@ -11,6 +11,7 @@ public class Player {
 	private int yPos;
 	private int width;
 	private int height;
+	 
 	
 	public Player(int xPos, int yPos, int width, int height) {
 		this.setX(xPos);
@@ -58,6 +59,10 @@ public class Player {
 
 	public void setHeight(int height) {
 		this.height = height;
+	}
+	
+	public void shoot() {
+		
 	}
 	
 }
