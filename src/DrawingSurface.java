@@ -7,6 +7,7 @@ public class DrawingSurface extends PApplet {
 	private ArrayList<Integer> keys;
 	private Player player1;
 	private Player player2;
+	
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();

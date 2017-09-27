@@ -11,8 +11,16 @@ public class Player {
 	private int yPos;
 	private int width;
 	private int height;
-	 
+	private int direction; //1 = up, 2 = right, 3 = down, 4 = left
 	
+	public int getDirection() {
+		return direction;
+	}
+
+	public void setDirection(int direction) {
+		this.direction = direction;
+	}
+
 	public Player(int xPos, int yPos, int width, int height) {
 		this.setX(xPos);
 		this.setY(yPos);
@@ -62,7 +70,15 @@ public class Player {
 	}
 	
 	public void shoot() {
-		
+		if(direction == 1) {
+			
+		}else if(direction == 2) {
+			
+		}else if(direction == 3) {
+			
+		}else {
+			
+		}
 	}
 	
 }
