@@ -8,13 +8,13 @@ public class DrawingSurface extends PApplet {
 	private static ArrayList<Bullet> bullets;
 	private Player player1;
 	private Player player2;
-	private Barrier p;
+//	private Barrier p;
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();
 		player1 = new Player(250, 400, 50, 50);
 		player2 = new Player(250,50,50,50);
-		p = new Barrier(225,200,50,100);
+//		p = new Barrier(225,200,50,100);
 		bullets = new ArrayList<Bullet>();
 	}
 
@@ -42,14 +42,14 @@ public class DrawingSurface extends PApplet {
 			System.out.println("Move Player2 Right");
 		}
 		 if (checkKey(16)) { //Left Shift
-				System.out.println("Player2 Shoot");
+				System.out.println("Shoot Player2");
 			}
 		 if (checkKey(32)) { //Left Shift
-				System.out.println("Player1 Shoot");
+				System.out.println("Shoot Player1");
 			}
 		player1.draw(this);
 		player2.draw(this);
-		p.draw(this);
+//		p.draw(this);
 		for(Bullet b: bullets) {
 			b.draw(this);
 		}

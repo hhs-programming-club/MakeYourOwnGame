@@ -71,14 +71,14 @@ public class Player {
 	
 	public void shoot() {
 		if(direction == 1) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos, 5, 90));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
 		}else if(direction == 2) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos, 5, 0));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
 
 		}else if(direction == 3) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos, 5, -90));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, -90));
 		}else {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos, 5, 180));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 180));
 		}
 	}
 	

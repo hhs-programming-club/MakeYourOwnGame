@@ -52,8 +52,8 @@ public class Bullet {
 	
 	public void draw(PApplet canvas) {
 		
-		double xMove = Math.sin(Math.toRadians(direction));
-		double yMove = Math.cos(Math.toRadians(direction));
+		double xMove = velocity*Math.sin(Math.toRadians(direction));
+		double yMove = velocity*Math.cos(Math.toRadians(direction));
 		
 		xPos += xMove;
 		yPos += yMove;
