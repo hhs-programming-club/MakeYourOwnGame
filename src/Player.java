@@ -36,7 +36,12 @@ public class Player {
 	}
 	
 	public void draw(PApplet canvas) {
+		canvas.pushMatrix();
+		canvas.pushStyle();
+		canvas.fill(50);
 		canvas.ellipse(xPos, yPos, width, width);
+		canvas.popMatrix();
+		canvas.popStyle();
 	}
 
 	public int getWidth() {
