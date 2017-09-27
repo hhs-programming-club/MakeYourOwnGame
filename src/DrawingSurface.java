@@ -7,11 +7,13 @@ public class DrawingSurface extends PApplet {
 	private ArrayList<Integer> keys;
 	private Player player1;
 	private Player player2;
+	private Platform p;
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();
 		player1 = new Player(250, 400, 50, 50);
 		player2 = new Player(250,50,50,50);
+		p = new Platform(225,200, 50, 100);
 	}
 
 	public void draw() {
