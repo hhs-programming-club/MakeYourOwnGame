@@ -2,14 +2,14 @@ import java.awt.Color;
 
 import processing.core.PApplet;
 
-public class Platform {
+public class Barrier {
 
 	int x = 0;
 	int y = 0;
 	int width = 0;
 	int height = 0;
 	boolean drawRect = true;
-	public Platform(int x, int y, int width, int height) {
+	public Barrier(int x, int y, int width, int height) {
 		this.x=x;
 		this.y=y;
 		this.width=width;
