@@ -64,13 +64,9 @@ public class DrawingSurface extends PApplet {
 		keys.add(keyCode);
 		if(checkKey(18)) { //OPTION to rotate bullet direction of player1
 			player1.setDirection(player1.getDirection() +1);
-			System.out.println(player1.getDirection());
-			System.out.println();
 		}
 		if(checkKey(9)) { //TAB to rotate bullet direction of player2
 			player2.setDirection(player2.getDirection() +1);
-			System.out.println(player2.getDirection());
-			System.out.println();
 		}
 	}
 
