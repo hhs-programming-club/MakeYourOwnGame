@@ -70,16 +70,18 @@ public class Player {
 	}
 	
 	public void shoot() {
-		if(direction == 1) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
-		}else if(direction == 2) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
-
-		}else if(direction == 3) {
+		if(direction % 4 == 1) {
 			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, -90));
+			System.out.println(1);
+		}else if(direction % 4 == 2) {
+			System.out.println(2);
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
+		}else if(direction % 4 == 3) {			
+			System.out.println(3);
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
 		}else {
+			System.out.println(4);
 			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 180));
 		}
 	}
-	
 }
