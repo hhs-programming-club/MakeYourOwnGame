@@ -76,7 +76,7 @@ public class Player {
 			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
 
 		}else if(direction == 3) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, -90));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 270));
 		}else {
 			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 180));
 		}
