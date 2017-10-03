@@ -12,6 +12,11 @@ public class Player {
 	private int width;
 	private int height;
 	private int direction; //1 = up, 2 = right, 3 = down, 4 = left
+	public static final int PLAYER_UP = 1;
+	public static final int PLAYER_DOWN = 3;
+	public static final int PLAYER_RIGHT = 2;
+	public static final int PLAYER_LEFT= 4;
+
 	
 	public int getDirection() {
 		return direction;
@@ -26,6 +31,7 @@ public class Player {
 		this.setY(yPos);
 		this.width = width;
 		this.height = height;
+		this.direction = PLAYER_UP;
 	}
 
 	public int getX() {
@@ -70,25 +76,15 @@ public class Player {
 	}
 	
 	public void shoot() {
-<<<<<<< HEAD
-		if(direction == 1) {
+		if(direction == PLAYER_UP) {
 			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
-		}else if(direction == 2) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
-
-		}else if(direction == 3) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 270));
-=======
-		if(direction % 4 == 1) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, -90));
-		}else if(direction % 4 == 2) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 0));
-		}else if(direction % 4 == 3) {			
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
->>>>>>> 1eaab7ea2d3c4417d973015766f681da65f835e2
+		}else if(direction == PLAYER_RIGHT) {
+			DrawingSurface.addBullet(new Bullet( xPos + 30,  yPos, 5, 0));
+		}else if(direction == PLAYER_DOWN) {			
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos + 30, 5, -90));
 		}else {
 			System.out.println(4);
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 180));
+			DrawingSurface.addBullet(new Bullet( xPos - 30, yPos, 5, 180));
 		}
 	}
 }

@@ -1,10 +1,12 @@
+import java.awt.Color;
+
 import processing.core.PApplet;
 
 public class Bullet {
 	private int xPos;
 	private int yPos;
 	private int width;
-	
+	private Color color;
 	private int velocity;
 	private int direction;
 	
@@ -12,9 +14,8 @@ public class Bullet {
 		this.setX(xPos);
 		this.setY(yPos);
 		this.width = width;
-		
+		this.color = Color.BLACK;
 		this.velocity = 10;
-		
 		this.direction = direction;
 	}
 
@@ -52,15 +53,15 @@ public class Bullet {
 	
 	public void draw(PApplet canvas) {
 		
-		double xMove = velocity*Math.sin(Math.toRadians(direction));
-		double yMove = velocity*Math.cos(Math.toRadians(direction));
+		double xMove = velocity*Math.cos(Math.toRadians(direction));
+		double yMove = velocity*Math.sin(Math.toRadians(direction));
 		
 		xPos += xMove;
-		yPos += yMove;
+		yPos -= yMove;
 		
 		canvas.pushMatrix();
 		canvas.pushStyle();
-		canvas.fill(255, 0, 0);
+		canvas.fill(color.getRed(), color.getGreen(), color.getBlue());
 		canvas.ellipse(xPos, yPos, width, width);
 		canvas.popMatrix();
 		canvas.popStyle();
@@ -72,5 +73,13 @@ public class Bullet {
 
 	public void setWidth(int width) {
 		this.width = width;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
 	}
 }

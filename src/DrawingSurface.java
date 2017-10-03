@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 
 import processing.core.*;
@@ -8,9 +9,6 @@ public class DrawingSurface extends PApplet {
 	private static ArrayList<Bullet> bullets;
 	private Player player1;
 	private Player player2;
-
-	private boolean keyPressedwIn16;
-	private long lastKeyTime; 
 	//	private Barrier p;
 
 	public DrawingSurface() {
@@ -19,8 +17,6 @@ public class DrawingSurface extends PApplet {
 		player2 = new Player(250,50,50,50);
 		//		p = new Barrier(225,200,50,100);
 		bullets = new ArrayList<Bullet>();
-		keyPressedwIn16 = false;
-		lastKeyTime = 0;
 	}
 
 	public void draw() {
@@ -31,6 +27,7 @@ public class DrawingSurface extends PApplet {
 			System.out.println("Move Player1 Right");
 		} if (checkKey(LEFT)) {
 			System.out.println("Move Player1 Left");
+			
 		} if (checkKey(UP)) {
 			System.out.println("Move Player1 Up");
 		} if (checkKey(DOWN)) {
@@ -49,11 +46,11 @@ public class DrawingSurface extends PApplet {
 		}
 		if (checkKey(16)) { // Shift
 			player2.shoot();
-			System.out.println("Shoot Player2");
+			System.out.println("Shoot by Player2");
 		}
 		if (checkKey(32)) { //Space
 			player1.shoot();
-			System.out.println("Shoot Player1");
+			System.out.println("Shoot by Player1");
 		}
 		
 		player1.draw(this);
