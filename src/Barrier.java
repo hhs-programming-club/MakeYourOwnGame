@@ -41,19 +41,19 @@ public class Barrier {
 		g.popMatrix();
 		g.popStyle();
 	}
-	
+	//returns the x value of the barrier
 	public int getX() {
 		return x;
 	}
-	
+	//returns the y value of the barrier
 	public int getY() {
 		return y;
 	}
-	
+	// returns the width of the barrier
 	public int getWidth() {
 		return width;
 	}
-	
+	// returns the height of the barrier
 	public int getHeight() {
 		return height;
 	}
