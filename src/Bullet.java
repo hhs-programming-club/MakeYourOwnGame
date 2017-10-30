@@ -1,11 +1,7 @@
 import java.awt.Color;
 
 import processing.core.PApplet;
-/**
- * 
- * @author Lily Li and Yash Bengali
- *
- */
+
 public class Bullet {
 	private int xPos;
 	private int yPos;
@@ -19,7 +15,7 @@ public class Bullet {
 		this.setY(yPos);
 		this.width = width;
 		this.color = Color.BLACK;
-		this.velocity = 15;
+		this.velocity = 10;
 		this.direction = direction;
 	}
 

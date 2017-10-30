@@ -1,11 +1,7 @@
 import java.awt.Color;
 
 import processing.core.PApplet;
-/**
- * 
- * @author Lily Li and Yash Bengali
- *
- */
+
 public class Barrier {
 
 	int x = 0;

@@ -4,11 +4,7 @@ import javax.swing.JFrame;
 
 import processing.awt.PSurfaceAWT;
 import processing.core.PApplet;
-/**
- * 
- * @author Lily Li and Yash Bengali
- *
- */
+
 public class Main {
 	public static void main(String args[]) {
 		DrawingSurface drawing = new DrawingSurface();
