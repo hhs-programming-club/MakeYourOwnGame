@@ -13,14 +13,16 @@ public class Bullet {
 	private Color color;
 	private int velocity;
 	private int direction;
+	private Player player;
 	
-	public Bullet(int xPos, int yPos, int width, int direction) {
+	public Bullet(int xPos, int yPos, int width, int direction, Player player) {
 		this.setX(xPos);
 		this.setY(yPos);
 		this.width = width;
 		this.color = Color.BLACK;
-		this.velocity = 15;
+		this.velocity = 10;
 		this.direction = direction;
+		this.player = player;
 	}
 
 	public int getVelocity() {
@@ -85,5 +87,9 @@ public class Bullet {
 
 	public void setColor(Color color) {
 		this.color = color;
+	}
+	
+	public Player getPlayer() {
+		return player;
 	}
 }
