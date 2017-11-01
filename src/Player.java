@@ -92,14 +92,14 @@ public class Player {
 	
 	public void shoot() {
 		if(direction == PLAYER_UP) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90, this));
 		}else if(direction == PLAYER_RIGHT) {
-			DrawingSurface.addBullet(new Bullet( xPos + 30,  yPos, 5, 0));
+			DrawingSurface.addBullet(new Bullet( xPos + 30,  yPos, 5, 0, this));
 		}else if(direction == PLAYER_DOWN) {			
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos + 30, 5, -90));
+			DrawingSurface.addBullet(new Bullet( xPos,  yPos + 30, 5, -90, this));
 		}else {
 			System.out.println(4);
-			DrawingSurface.addBullet(new Bullet( xPos - 30, yPos, 5, 180));
+			DrawingSurface.addBullet(new Bullet( xPos - 30, yPos, 5, 180, this));
 		}
 	}
 }
