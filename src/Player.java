@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.util.ArrayList;
 
 import processing.core.PApplet;
 
@@ -19,6 +20,7 @@ public class Player {
 	public static final int PLAYER_DOWN = 3;
 	public static final int PLAYER_RIGHT = 2;
 	public static final int PLAYER_LEFT= 4;
+	public ArrayList<Bullet> bullets;
 
 	
 	public int getDirection() {
@@ -36,6 +38,26 @@ public class Player {
 		this.height = height;
 		this.direction = PLAYER_UP;
 		this.color = color;
+		this.bullets = new ArrayList<Bullet>();
+	}
+	
+	public void addBullet(Bullet bull) {
+		bullets.add(bull);
+	}
+	
+	public ArrayList<Bullet> getBulletsArray(){
+		return bullets;
+	}
+	
+	public void deleteBullet(int i) {
+		bullets.remove(i);
+	}
+	public Bullet getBullet(int i) {
+		return bullets.get(i);
+	}
+	
+	public int getBulletSize() {
+		return bullets.size();
 	}
 
 	public int getX() {
@@ -58,7 +80,11 @@ public class Player {
 		canvas.pushMatrix();
 		canvas.pushStyle();
 		canvas.fill(color.getRed(), color.getGreen(), color.getBlue());
-		canvas.ellipse(xPos, yPos, width, width);
+		canvas.rect(xPos - width/2, yPos - height/2, width, width);
+		canvas.fill(0);
+		canvas.ellipse(xPos + 15 - width/2, yPos + 17 - height/2, 5, 5);
+		canvas.ellipse(xPos + width/2 - 15, yPos + 17 - height/2, 5, 5);
+		canvas.arc(xPos , yPos + 25 - height/2, 20, 30, 0,(float)Math.PI);
 		canvas.popMatrix();
 		canvas.popStyle();
 	}
@@ -90,16 +116,15 @@ public class Player {
 		this.height = height;
 	}
 	
-	public void shoot() {
+	public Bullet shoot() {
 		if(direction == PLAYER_UP) {
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos - 30, 5, 90, this));
+			return new Bullet( xPos,  yPos - 30, 5, 90);
 		}else if(direction == PLAYER_RIGHT) {
-			DrawingSurface.addBullet(new Bullet( xPos + 30,  yPos, 5, 0, this));
+			return new Bullet( xPos + 30,  yPos, 5, 0);
 		}else if(direction == PLAYER_DOWN) {			
-			DrawingSurface.addBullet(new Bullet( xPos,  yPos + 30, 5, -90, this));
+			return new Bullet( xPos,  yPos + 30, 5, -90);
 		}else {
-			System.out.println(4);
-			DrawingSurface.addBullet(new Bullet( xPos - 30, yPos, 5, 180, this));
+			return new Bullet( xPos - 30, yPos, 5, 180);
 		}
 	}
 }
