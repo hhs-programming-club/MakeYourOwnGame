@@ -21,7 +21,8 @@ public class Player {
 	public static final int PLAYER_RIGHT = 2;
 	public static final int PLAYER_LEFT= 4;
 	public ArrayList<Bullet> bullets;
-
+	public String name;
+	public int hitCount;
 	
 	public int getDirection() {
 		return direction;
@@ -31,7 +32,7 @@ public class Player {
 		this.direction = direction;
 	}
 
-	public Player(int xPos, int yPos, int width, int height, Color color) {
+	public Player(int xPos, int yPos, int width, int height, Color color, String name) {
 		this.setX(xPos);
 		this.setY(yPos);
 		this.width = width;
@@ -39,6 +40,19 @@ public class Player {
 		this.direction = PLAYER_UP;
 		this.color = color;
 		this.bullets = new ArrayList<Bullet>();
+		this.name = name;
+		hitCount = 0;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public int getHitCount() {
+		return hitCount;
+	}
+	public void hit() {
+		hitCount ++;
 	}
 	
 	public void addBullet(Bullet bull) {

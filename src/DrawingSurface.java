@@ -13,23 +13,16 @@ public class DrawingSurface extends PApplet {
 	private ArrayList<Integer> keys;
 	private Player player1;
 	private Player player2;
-	private boolean gameOver;
 
 	public DrawingSurface() {
 		keys = new ArrayList<Integer>();
-		player1 = new Player(250, 400, 50, 50, Color.MAGENTA);
-		player2 = new Player(250,50,50,50, Color.GREEN);
-		gameOver = false;
+		player1 = new Player(250, 400, 50, 50, Color.MAGENTA, "player1");
+		player2 = new Player(250,50,50,50, Color.GREEN, "player2");
 	}
 
 	public void draw() {
 		clear();
 		background(255);
-		
-		if(gameOver) {
-			fill(0);
-			rect(0, 0, width, height);
-		} else {
 
 		if (checkKey(RIGHT)) {
 			player1.setDirection(Player.PLAYER_RIGHT);
@@ -71,7 +64,19 @@ public class DrawingSurface extends PApplet {
 		
 		checkCollision(player1, player2.getBulletsArray());
 		checkCollision(player2, player1.getBulletsArray());
-		}
+		
+		pushMatrix();
+		pushStyle();
+		noFill();
+		rect(0,0,150,100);
+		fill(0, 102, 153);
+		textSize(20);
+		text(player1.getName() + ":", 20,40);
+		text(player1.getHitCount(), 110, 40);
+		text(player2.getName() + ":", 20,75);
+		text(player2.getHitCount(), 110,75);	
+		popMatrix();
+		popStyle();
 	}
 	
 	public void drawBullets(Player p) {
@@ -96,26 +101,21 @@ public class DrawingSurface extends PApplet {
 
 			if(b.getY() >= p.getY() && b.getY() <= p.getY() + p.getHeight()) {
 				if(b.getX() >= p.getX() && b.getX() <= p.getX() + width) {
-					endSequence();
-					System.out.println("end game");
+					endSequence(p);
+					bullets.remove(b);
+					return;
 				}
 			}
 		}
 	}
 	
-	public void endSequence() {
-		gameOver = true;
+	public void endSequence(Player p) {
+		p.hit();
 	}
 
 	public void keyPressed() {
 		keys.add(keyCode);
-
-//		if(checkKey(18)) { //OPTION to rotate bullet direction of player1
-//			player1.setDirection(player1.getDirection() +1);
-//		}
-//		if(checkKey(9)) { //TAB to rotate bullet direction of player2
-//			player2.setDirection(player2.getDirection() +1);
-//		}
+		
 		if (checkKey(16)) { // Shift
 			player2.addBullet(player2.shoot());
 		}
